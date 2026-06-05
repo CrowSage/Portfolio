@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+@font-face {
+    font-family: "MyFont";
+    src: url("./assets/fonts/FamiljenGrotesk-Variable.woff2") format("woff2");
+}
+
+:root {
+    --bg: hsl(225, 56%, 11%);
+    --fg: hsl(0, 0%, 90%);
+    --lightText: hsl(0, 0%, 60%);
+    ;
+    --accent: hsl(225, 88%, 60%);
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans";
+    /* font-family: "MyFont"; */
+
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+
+}
+
+
+/* ----------Main Container---------- */
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    gap: 50px;
+}
+
+/* ----------Hero---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    color: var(--accent);
+    line-height: 100%;
+    font-weight: 600;
+}
+
+.role {
+    color: var(--lightText);
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: 5%;
+}
+
+/* ----------Main Content---------- */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBar {
+    display: flex;
+    gap: 50px;
+}
+
+.navItem {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 5%;
+    color: var(--lightText);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: color 0.3s ease-in-out;
+}
+
+.navItem:hover {
+    color: var(--fg);
+}
+
+
+.navItem.active {
+    position: relative;
+    color: var(--fg);
+}
+
+.navItem.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0%;
+
+    width: 100%;
+    height: 2px;
+    background-color: var(--fg);
+    border-radius: 50px;
+
+    animation: lineMaker 0.4s 1 ease-in-out;
+}
+
+/* ----------Content View---------- */
+.contentView {
+    display: flex;
+    justify-content: center;
+
+    height: 30vh;
+    width: 100%;
+}
+
+/* ----------About---------- */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 60ch;
+    text-align: center;
+    color: var(--lightText);
+
+    line-height: 150%;
+
+    margin-top: 64px;
+}
+
+.location {
+    color: var(--fg);
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
+}
+
+.githubLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    gap: 8px;
+
+    background-color: hsl(0, 0%, 0%, 0.3);
+    color: hsl(0, 0%, 70%);
+    text-decoration: none;
+
+    padding: 8px 64px;
+    font-size: 16px;
+
+    border-radius: 4px;
+
+    text-transform: uppercase;
+
+    border: 1px solid hsl(0, 0%, 70%);
+
+    transition: background-color 0.3s ease;
+}
+
+.githubLink:hover {
+    background-color: hsl(0, 0%, 0%, 0.15);
+}
+
+.githubLink svg {
+    fill: currentColor;
+    width: 20px;
+
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* ----------Technologies---------- */
+.technologies {
+    max-width: 800px;
+    margin-inline: auto;
+
+    margin-top: 64px;
+}
+
+.techGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+
+}
+
+.backendTech,
+.frontendTech,
+.toolsTech {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.backendTech h3,
+.frontendTech h3,
+.toolsTech h3 {
+
+    color: var(--lightText);
+    margin: 8px 0px;
+}
+
+.gridItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 250px;
+    background-color: hsl(225, 56%, 80%, 0.1);
+    border-radius: 6px;
+    border: 1px solid transparent;
+
+    gap: 5px;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+    color: var(--lightText);
+}
+
+.techIcon {
+    fill: var(--accent);
+
+    width: 50px;
+    height: 50px;
+    background-color: hsl(225, 56%, 11%);
+    padding: 14px;
+    margin: 5px;
+    border-radius: 6px;
+
+
+}
+
+.techInfo {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.techDesc {
+    font-size: 12px;
+    color: hsl(0, 0%, 60%);
+    /* display: none; */
+
+}
+
+.techName {
+    font-size: 16px;
+    letter-spacing: -2%;
+    font-weight: 500;
+    flex: 1;
+
+    color: var(--accent);
+}
+
+
+
+.gridItem:hover {
+    background-color: hsl(225, 56%, 11%);
+    border: 1px solid var(--accent);
+}
+
+/* ----------Animations---------- */
+@keyframes lineMaker {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(2000px);
+        opacity: 0%;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 40%;
+    }
+}
+
+@keyframes popout {
+    from {
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ----------Cursor Glow---------- */
+.cursorGlow {
+    width: 800px;
+    height: 800px;
+    border-radius: 100%;
+
+
+    position: fixed;
+    z-index: -5;
+
+    background: radial-gradient(circle,
+            hsla(225, 67%, 60%, 0.08) 0%,
+            var(--bg) 70%);
+
+    /* filter: blur(30px); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 36px;
+
+    transform: translate(-50%, -50%);
+}
+
+/* ----------Projects---------- */
+.projects {
+    margin-top: 64px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    flex-direction: column;
+
+    background-color: hsl(225, 56%, 80%, 0.1);
+
+    transition: 0.3s;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.129);
+
+
+    width: 90vw;
+    max-width: 500px;
+    height: 200px;
+
+    gap: 16px;
+}
+
+.projectTop {
+    display: flex;
+    justify-content: center;
+
+    gap: 32px;
+}
+
+.projectButtons {
+    display: flex;
+    gap: 8px;
+
+    margin-top: 16px;
+}
+
+.projectButtons a {
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+
+    font-size: 14px;
+}
+
+.liveBtn {
+    background-color: var(--accent);
+    color: var(--fg);
+
+}
+
+.repoBtn {
+    color: var(--accent);
+}
+
+.projectDesc {
+    color: var(--lightText);
+}
+
+.projectBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 16px;
+}
+
+.projectImg {
+    object-fit: contain;
+    width: 200px;
+    border-radius: 8px;
+}
+
+.projectTags {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.projectTag {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+
+    border: 1px solid var(--accent);
+    color: var(--accent);
+
+    padding: 5px 10px;
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.project:hover {
+    background-color: hsl(225, 66%, 80%, 0.07);
+    border-color: var(--accent);
+}
+
+/* ----------Contact---------- */
+.contact.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 150%;
+
+    margin-top: 64px;
+}
+
+.contactIntro {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+
+    color: var(--fg);
+    font-size: 16px;
+
+    position: relative;
+
+}
+
+.contactIntro h3 {
+    display: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 48px;
+}
+
+
+.contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+
+    border-radius: 4px;
+
+    font-size: 16px;
+
+    margin-top: 32px;
+
+    font-weight: 500;
+
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.emailButtons {
+    display: flex;
+    gap: 5px;
+}
+
+.emailBtn {
+    text-decoration: none;
+    padding: 8px 64px;
+}
+
+.contact a:hover {
+    background-color: var(--accent);
+    color: var(--fg);
+}
+
+.contact a svg {
+    height: 24px;
+    stroke: currentColor;
+}
+
+.copyBtn {
+    padding: 8px 8px;
+}
+
+/* ----------Popup Message---------- */
+.popupMsg {
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    position: fixed;
+    top: 10px;
+    transform: translateX(-50%);
+    left: 50%;
+
+
+    background-color: rgb(33, 33, 33);
+
+    padding: 16px 32px;
+
+    border-radius: 4px;
+
+
+    animation: popout 0.3s;
+}
+
+/* ----------Common---------- */
+h2 {
+    font-size: 49px;
+    letter-spacing: -2%;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: var(--fg);
+}
+
+.rightHeading {
+    position: absolute;
+    right: -180px;
+    transform: rotateZ(270deg);
+
+
+    font-size: 96px;
+
+    mix-blend-mode: soft-light;
+}
+
+/* ----------Media Queries---------- */
+@media (max-width: 768px) {
+    .name {
+        font-size: 44px;
+    }
+
+    .role {
+        font-size: 12px;
+    }
+
+    .about {
+        width: 95%;
+        font-size: 12px;
+    }
+
+    .navBar {
+        gap: 20px;
+    }
+
+    .navItem {
+        font-size: 12px;
+    }
+
+    .mainContainer {
+        min-height: auto;
+        min-height: 100vh;
+    }
+
+    .techItem {
+        width: 100%;
+    }
+
+    .techGrid {
+        padding-bottom: 20px;
+    }
+
+    .contact span {
+        font-size: 12px;
+    }
+
+    .popupMsg {
+        font-size: 12px;
+        width: 70%;
+    }
+
+    .projects {
+        padding-bottom: 20px;
+
+    }
+
+    .projectsGrid {
+
+        padding-bottom: 20px;
+
+    }
+
+    .project {
+        width: 90vw;
+        height: fit-content;
+
+        padding: 20px;
+
+
+    }
+
+    .projectTags {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .projectDesc {
+        font-size: 12px;
+    }
+
+    .projectButtons {
+        font-size: 12px;
+    }
+
+    .projectTag {
+        font-size: 12px;
+    }
+
+    .projectTop {
+        flex-direction: column;
+    }
+
+    .projectImg {
+        width: 90%;
+    }
+
+}
